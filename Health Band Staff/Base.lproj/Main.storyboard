@@ -1,24 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="33k-xV-f5s">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="w5P-3F-6BN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="kwt-hT-UAL" customClass="HomeViewController" customModule="Health_Band_Staff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mx8-Pb-u8B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-HS-i9j">
+                                <rect key="frame" x="135" y="324" width="144" height="248.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Band Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-hi-Ti1">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-Ii-Fbh">
+                                        <rect key="frame" x="0.0" y="45.5" width="144" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-gR-8Lz">
+                                        <rect key="frame" x="0.0" y="104.5" width="144" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDM-er-Cvh">
+                                        <rect key="frame" x="0.0" y="163.5" width="144" height="30"/>
+                                        <state key="normal" title="Sign In"/>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="6bu-QF-aXG" eventType="touchUpInside" id="3Fb-4s-kFu"/>
+                                            <action selector="signinPressed:" destination="kwt-hT-UAL" eventType="touchUpInside" id="EqU-QK-1bY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfl-FY-MVm">
+                                        <rect key="frame" x="0.0" y="218.5" width="144" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <segue destination="6bu-QF-aXG" kind="show" identifier="HomeToRegister" id="EQp-xy-ZuP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OSc-HS-i9j" firstAttribute="centerY" secondItem="mx8-Pb-u8B" secondAttribute="centerY" id="1JS-TK-Rof"/>
+                            <constraint firstItem="OSc-HS-i9j" firstAttribute="centerX" secondItem="mx8-Pb-u8B" secondAttribute="centerX" id="mb2-sf-uce"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BBh-Qu-fJf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oyL-FV-FGO"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="FEK-Ii-Fbh" id="L07-cD-Oge"/>
+                        <outlet property="passwordTextField" destination="p8K-gR-8Lz" id="bLg-OR-Pur"/>
+                        <segue destination="cm8-dt-T6Q" kind="show" identifier="HomeToDashboard" id="PhI-Cf-rbD"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfz-FI-iRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="987" y="148"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="ARh-qm-g6l">
+            <objects>
+                <viewController id="6bu-QF-aXG" customClass="RegisterViewController" customModule="Health_Band_Staff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zz1-78-tsH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="7QK-CL-UYh">
+                                <rect key="frame" x="126.5" y="351.5" width="161.5" height="193.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Band Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-Ov-yo9">
+                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmE-GX-cUW">
+                                        <rect key="frame" x="0.0" y="45.5" width="161.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2l-M2-vY5">
+                                        <rect key="frame" x="0.0" y="104.5" width="161.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-rL-KQp">
+                                        <rect key="frame" x="0.0" y="163.5" width="161.5" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="6bu-QF-aXG" eventType="touchUpInside" id="75I-ql-ChC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7QK-CL-UYh" firstAttribute="centerY" secondItem="zz1-78-tsH" secondAttribute="centerY" id="Qo3-oa-Pko"/>
+                            <constraint firstItem="7QK-CL-UYh" firstAttribute="centerX" secondItem="zz1-78-tsH" secondAttribute="centerX" id="tPv-Rf-Q0G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oqe-0w-j02"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JF0-fs-Vbu"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="wmE-GX-cUW" id="Djp-Bn-T71"/>
+                        <outlet property="passwordTextField" destination="U2l-M2-vY5" id="zGU-iM-glc"/>
+                        <segue destination="cm8-dt-T6Q" kind="show" identifier="RegisterToDashboard" id="Isc-ba-AEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJc-MS-JYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="148"/>
+        </scene>
+        <!--Dash Board View Controller-->
+        <scene sceneID="Vuf-6P-xWd">
+            <objects>
+                <viewController id="cm8-dt-T6Q" customClass="DashBoardViewController" customModule="Health_Band_Staff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HFF-rT-K4M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8nR-Lx-X2W"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="We6-D6-3FA">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="eUC-Ok-ggh">
+                            <connections>
+                                <action selector="logoutPressed:" destination="cm8-dt-T6Q" id="w96-mo-HjF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ms-iE-u8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1433" y="970"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LOk-Fo-a8l">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVS-sY-WwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="33k-xV-f5s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="743-Jp-oJk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kwt-hT-UAL" kind="relationship" relationship="rootViewController" id="T9e-dN-mbk"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="239" y="148"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PhI-Cf-rbD"/>
+    </inferredMetricsTieBreakers>
 </document>
