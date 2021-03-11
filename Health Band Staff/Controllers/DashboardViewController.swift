@@ -11,10 +11,15 @@ import Firebase
 
 class DashBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let db = Firestore.firestore()
+    var staffEmail: String = ""
+    var patientList: [String] = []
+
     @IBOutlet var patientTableView: UITableView!
-    let myData = ["first", "second", "third", "fourth", "fifth"]
+  
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         title = "DashBoard"
         navigationItem.hidesBackButton = true
@@ -25,12 +30,30 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
         backgroundImage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundImage, at: 0)
         
-        
         // Patient Table
         let nib = UINib(nibName: "PatientTableViewCell", bundle: nil)
         patientTableView.register(nib, forCellReuseIdentifier: "PatientTableViewCell")
         patientTableView.delegate = self
         patientTableView.dataSource = self
+        
+        getPatientList()
+               
+    }
+    
+    func getPatientList() {
+        db.collection("staff").whereField("email", isEqualTo: staffEmail).getDocuments() { (querySnapshot, err) in
+               if let err = err {
+                          print("Error getting documents: \(err)")
+                      }
+               else {
+                let document = querySnapshot!.documents[0]
+                          self.patientList = document.get("patients") as! [String]
+                DispatchQueue.main.async {
+                    self.patientTableView.reloadData()
+                }
+                
+            }
+        }
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -45,12 +68,13 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // TableView Funcs
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myData.count
+        return patientList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PatientTableViewCell", for: indexPath) as! PatientTableViewCell
-        cell.myLabel.text = myData[indexPath.row]
+        cell.myLabel.text = patientList[indexPath.row]
+        print(patientList[indexPath.row])
         return cell
     }
 }

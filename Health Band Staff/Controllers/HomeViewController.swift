@@ -26,10 +26,17 @@ class HomeViewController: UIViewController {
                     self.showAlert(title: "Error", message: "Unable to Login")
                 }
                 else{
-                    print(authResult?.user.email)
                     self.performSegue(withIdentifier: "HomeToDashboard", sender: self)
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HomeToDashboard" {
+            let vc = segue.destination as! DashBoardViewController
+            let staffEmail = emailTextField.text
+            vc.staffEmail = staffEmail!
         }
     }
     

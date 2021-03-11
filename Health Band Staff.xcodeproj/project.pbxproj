@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		425C44E825CF1A3400C2980E /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C44E625CF1A3400C2980E /* PatientTableViewCell.swift */; };
 		425C44E925CF1A3400C2980E /* PatientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425C44E725CF1A3400C2980E /* PatientTableViewCell.xib */; };
-		42CAD09B25CF3E2400344E80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42CAD09A25CF3E2300344E80 /* GoogleService-Info.plist */; };
 		8E55DAD3E4DAA2B5C298EA5E /* Pods_Health_Band_Staff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEB3246BACC0C591B8F3B0A /* Pods_Health_Band_Staff.framework */; };
+		B83E1A4325F9BF6200792D19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B83E1A4225F9BF6200792D19 /* GoogleService-Info.plist */; };
 		B889C63725AE380300A852B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889C63625AE380300A852B3 /* AppDelegate.swift */; };
 		B889C63925AE380300A852B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889C63825AE380300A852B3 /* SceneDelegate.swift */; };
 		B889C63E25AE380300A852B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B889C63C25AE380300A852B3 /* Main.storyboard */; };
@@ -24,9 +24,9 @@
 /* Begin PBXFileReference section */
 		425C44E625CF1A3400C2980E /* PatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
 		425C44E725CF1A3400C2980E /* PatientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientTableViewCell.xib; sourceTree = "<group>"; };
-		42CAD09A25CF3E2300344E80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A1592C9A1012335BFE8AB68 /* Pods-Health Band Staff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health Band Staff.release.xcconfig"; path = "Target Support Files/Pods-Health Band Staff/Pods-Health Band Staff.release.xcconfig"; sourceTree = "<group>"; };
 		AAEB3246BACC0C591B8F3B0A /* Pods_Health_Band_Staff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Health_Band_Staff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B83E1A4225F9BF6200792D19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B889C63325AE380300A852B3 /* Health Band Staff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Band Staff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B889C63625AE380300A852B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B889C63825AE380300A852B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		B889C63525AE380300A852B3 /* Health Band Staff */ = {
 			isa = PBXGroup;
 			children = (
-				42CAD09A25CF3E2300344E80 /* GoogleService-Info.plist */,
+				B83E1A4225F9BF6200792D19 /* GoogleService-Info.plist */,
 				B889C64E25AEAAED00A852B3 /* Controllers */,
 				B889C63625AE380300A852B3 /* AppDelegate.swift */,
 				B889C63825AE380300A852B3 /* SceneDelegate.swift */,
@@ -176,7 +176,7 @@
 			files = (
 				B889C64325AE380900A852B3 /* LaunchScreen.storyboard in Resources */,
 				425C44E925CF1A3400C2980E /* PatientTableViewCell.xib in Resources */,
-				42CAD09B25CF3E2400344E80 /* GoogleService-Info.plist in Resources */,
+				B83E1A4325F9BF6200792D19 /* GoogleService-Info.plist in Resources */,
 				B889C64025AE380900A852B3 /* Assets.xcassets in Resources */,
 				B889C63E25AE380300A852B3 /* Main.storyboard in Resources */,
 			);
