@@ -43,4 +43,13 @@ class RegisterViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RegisterToDashboard" {
+            let vc = segue.destination as! DashBoardViewController
+            let staffEmail = emailTextField.text
+            vc.staffEmail = staffEmail!
+        }
+    }
+    }
+

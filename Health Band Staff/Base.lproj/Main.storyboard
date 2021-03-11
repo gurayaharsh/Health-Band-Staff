@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfz-FI-iRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="148"/>
+            <point key="canvasLocation" x="968" y="161"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ARh-qm-g6l">
@@ -132,7 +132,40 @@
                     <view key="view" contentMode="scaleToFill" id="HFF-rT-K4M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b2Q-bj-fsO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ue9-5q-Ym3">
+                                <rect key="frame" x="276" y="728" width="52" height="52"/>
+                                <state key="normal" image="add_patient"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmr-6D-B8m">
+                                <rect key="frame" x="86" y="728" width="52" height="52"/>
+                                <state key="normal" image="remove_patient"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePk-oD-3BA">
+                                <rect key="frame" x="42" y="200" width="330" height="489"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="bottom" secondItem="Kmr-6D-B8m" secondAttribute="bottom" constant="82" id="AB0-Uj-pkC"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="trailing" secondItem="b2Q-bj-fsO" secondAttribute="trailing" id="GlE-on-uzi"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="bottom" secondItem="b2Q-bj-fsO" secondAttribute="bottom" id="Mx0-1C-O5S"/>
+                            <constraint firstItem="ePk-oD-3BA" firstAttribute="leading" secondItem="8nR-Lx-X2W" secondAttribute="leading" constant="42" id="Ngz-7R-WxQ"/>
+                            <constraint firstItem="b2Q-bj-fsO" firstAttribute="top" secondItem="8nR-Lx-X2W" secondAttribute="top" id="au5-dJ-n1z"/>
+                            <constraint firstItem="ePk-oD-3BA" firstAttribute="top" secondItem="8nR-Lx-X2W" secondAttribute="top" constant="112" id="bUb-6r-E8D"/>
+                            <constraint firstItem="Kmr-6D-B8m" firstAttribute="leading" secondItem="8nR-Lx-X2W" secondAttribute="leading" constant="86" id="dCG-Tt-MA4"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="bottom" secondItem="Ue9-5q-Ym3" secondAttribute="bottom" constant="82" id="fd3-hP-arb"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="bottom" secondItem="ePk-oD-3BA" secondAttribute="bottom" constant="173" id="hqh-ql-0S1"/>
+                            <constraint firstItem="Ue9-5q-Ym3" firstAttribute="top" secondItem="8nR-Lx-X2W" secondAttribute="top" constant="640" id="ibh-PB-RJE"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="trailing" secondItem="Ue9-5q-Ym3" secondAttribute="trailing" constant="86" id="mBJ-Uu-Uo9"/>
+                            <constraint firstItem="b2Q-bj-fsO" firstAttribute="leading" secondItem="8nR-Lx-X2W" secondAttribute="leading" id="wAl-x8-0Pf"/>
+                            <constraint firstItem="Kmr-6D-B8m" firstAttribute="top" secondItem="8nR-Lx-X2W" secondAttribute="top" constant="640" id="wpZ-Nw-uxf"/>
+                            <constraint firstItem="8nR-Lx-X2W" firstAttribute="trailing" secondItem="ePk-oD-3BA" secondAttribute="trailing" constant="42" id="x4O-jK-QSq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8nR-Lx-X2W"/>
                     </view>
                     <navigationItem key="navigationItem" id="We6-D6-3FA">
@@ -142,15 +175,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="patientTableView" destination="ePk-oD-3BA" id="sMF-Oh-edQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ms-iE-u8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1433" y="970"/>
+            <point key="canvasLocation" x="1430.4347826086957" y="969.64285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LOk-Fo-a8l">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eVS-sY-WwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="33k-xV-f5s" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="743-Jp-oJk">
@@ -162,10 +197,15 @@
                         <segue destination="kwt-hT-UAL" kind="relationship" relationship="rootViewController" id="T9e-dN-mbk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVS-sY-WwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="239" y="148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_patient" width="52" height="52"/>
+        <image name="remove_patient" width="52" height="52"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PhI-Cf-rbD"/>
     </inferredMetricsTieBreakers>
