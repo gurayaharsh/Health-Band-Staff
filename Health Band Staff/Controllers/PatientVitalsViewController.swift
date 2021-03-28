@@ -33,27 +33,30 @@ class PatientVitalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let patientLocation = CLLocationCoordinate2D(latitude: 21.282778, longitude: -157.829444)
-        let patientRegion = MKCoordinateRegion(center: patientLocation, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-        self.patientLocationMapView.setRegion(patientRegion, animated: true)
-        let pin = customPin(location: patientLocation)
-        self.patientLocationMapView.addAnnotation(pin)
         getPatientVitals()
         patientName.text = "\(name)"
     }
     //.order(by: "created", descending: true)
     func getPatientVitals() {
-        db.collection("patients").whereField("name", isEqualTo: name).order(by: "created", descending: true).getDocuments() { (querySnapshot, err) in
+        db.collection("patients").whereField("name", isEqualTo: "patient1").order(by: "created", descending: true).getDocuments() { (querySnapshot, err) in
                if let err = err {
                           print("Error getting documents: \(err)")
                       }
                else {
+                print(querySnapshot!.documents)
+                for n in 0...10 {
+                    print(querySnapshot!.documents[n].documentID)
+                }
                 let document = querySnapshot!.documents[0]
                 self.patientHeartRate.text = "\(document.get("hr") as! Int) bpm"
                 self.patientTemperature.text = "\(document.get("temp") as! Int)°C"
                 self.patientOxygenLevel.text = "\(document.get("oxygen") as! Int)%"
-                print(document.get("loc") as! [String])
-//                self.patientLocationMapView = document.get("loc") as! [String]
+                let geolocation = document.get("loc") as! GeoPoint
+                let patientLocation = CLLocationCoordinate2D(latitude: geolocation.latitude, longitude: geolocation.longitude)
+                let patientRegion = MKCoordinateRegion(center: patientLocation, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+                self.patientLocationMapView.setRegion(patientRegion, animated: true)
+                let pin = customPin(location: patientLocation)
+                self.patientLocationMapView.addAnnotation(pin)
             }
         }
     }
