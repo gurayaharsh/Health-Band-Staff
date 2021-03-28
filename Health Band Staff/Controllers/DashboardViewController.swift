@@ -9,14 +9,19 @@
 import UIKit
 import Firebase
 
-class DashBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DashBoardViewController: UIViewController {
     
     let db = Firestore.firestore()
     var staffEmail: String = ""
     var patientList: [String] = []
 
+    @IBOutlet var patientTableViewBorder: UIView!
     @IBOutlet var patientTableView: UITableView!
-  
+    @IBOutlet var patientTitle: UILabel!
+    @IBAction func addPatientButton(_ sender: Any) {
+    }
+    @IBAction func removePatientButton(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
        
@@ -24,18 +29,15 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
         title = "DashBoard"
         navigationItem.hidesBackButton = true
         
-        // setting background image
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
-        backgroundImage.contentMode = .scaleAspectFill
-        view.insertSubview(backgroundImage, at: 0)
-        
         // Patient Table
         let nib = UINib(nibName: "PatientTableViewCell", bundle: nil)
         patientTableView.register(nib, forCellReuseIdentifier: "PatientTableViewCell")
         patientTableView.delegate = self
         patientTableView.dataSource = self
-        
+        patientTableViewBorder.backgroundColor = UIColor.clear
+        patientTableViewBorder.layer.borderColor = UIColor.white.cgColor
+        patientTableViewBorder.layer.cornerRadius = 8
+        patientTableViewBorder.layer.borderWidth = 3
         getPatientList()
                
     }
@@ -65,7 +67,9 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
           
     }
-    
+}
+
+extension DashBoardViewController: UITableViewDelegate, UITableViewDataSource {
     // TableView Funcs
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return patientList.count
@@ -74,7 +78,19 @@ class DashBoardViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PatientTableViewCell", for: indexPath) as! PatientTableViewCell
         cell.myLabel.text = patientList[indexPath.row]
-        print(patientList[indexPath.row])
+        cell.roundView.layer.cornerRadius = 8
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PatientVitalsViewController") as? PatientVitalsViewController
+        vc?.name = patientList[indexPath.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let cellSpacingHeight: CGFloat = 5
+        return cellSpacingHeight
     }
 }

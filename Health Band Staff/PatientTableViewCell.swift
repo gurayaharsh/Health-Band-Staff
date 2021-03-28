@@ -11,6 +11,7 @@ import UIKit
 class PatientTableViewCell: UITableViewCell {
     
     @IBOutlet var myLabel: UILabel!
+    @IBOutlet var roundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
