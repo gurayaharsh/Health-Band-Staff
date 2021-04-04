@@ -83,8 +83,9 @@ extension DashBoardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PatientVitalsViewController") as? PatientVitalsViewController
-        vc?.name = patientList[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PatientController") as? PatientVitalsViewController
+        vc!.name = patientList[indexPath.row]
+        print(vc!.name)
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

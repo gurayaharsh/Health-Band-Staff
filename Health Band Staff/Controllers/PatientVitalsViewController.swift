@@ -24,12 +24,12 @@ class PatientVitalsViewController: UIViewController {
     let db = Firestore.firestore()
     
     @IBOutlet var patientLocationMapView: MKMapView!
-    @IBOutlet var patientHeartRate: UILabel!
     @IBOutlet var patientTemperature: UILabel!
     @IBOutlet var patientOxygenLevel: UILabel!
+    @IBOutlet var patientHeartRate: UILabel!
     @IBOutlet var patientName: UILabel!
     
-    var name = "patient1"
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class PatientVitalsViewController: UIViewController {
                 }
                 let document = querySnapshot!.documents[0]
                 self.patientHeartRate.text = "\(document.get("hr") as! Int) bpm"
-                self.patientTemperature.text = "\(document.get("temp") as! Int)°C"
+                self.patientTemperature.text = "\(document.get("temp") as! Double)°C"
                 self.patientOxygenLevel.text = "\(document.get("oxygen") as! Int)%"
                 let geolocation = document.get("loc") as! GeoPoint
                 let patientLocation = CLLocationCoordinate2D(latitude: geolocation.latitude, longitude: geolocation.longitude)
