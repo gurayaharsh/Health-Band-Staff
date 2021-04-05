@@ -37,8 +37,11 @@
 		B889C64F25AEAB1A00A852B3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B889C65225AEB40F00A852B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B889C65425AEB75100A852B3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+
 		D539101925FFF33F00415B30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D53910202608E60600415B30 /* PatientVitalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientVitalsViewController.swift; sourceTree = "<group>"; };
+		B8D05DEE260D8AF6000E6609 /* Health Band Staff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health Band Staff.entitlements"; sourceTree = "<group>"; };
+
 		EA94CB9F6F85D9C02AA7FB19 /* Pods-Health Band Staff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health Band Staff.debug.xcconfig"; path = "Target Support Files/Pods-Health Band Staff/Pods-Health Band Staff.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +86,10 @@
 		B889C63525AE380300A852B3 /* Health Band Staff */ = {
 			isa = PBXGroup;
 			children = (
-				D539101925FFF33F00415B30 /* GoogleService-Info.plist */,
+
+				B8D05DEE260D8AF6000E6609 /* Health Band Staff.entitlements */,
+				B83E1A4225F9BF6200792D19 /* GoogleService-Info.plist */,
+
 				B889C64E25AEAAED00A852B3 /* Controllers */,
 				B889C63625AE380300A852B3 /* AppDelegate.swift */,
 				B889C63825AE380300A852B3 /* SceneDelegate.swift */,
@@ -385,7 +391,10 @@
 			baseConfigurationReference = EA94CB9F6F85D9C02AA7FB19 /* Pods-Health Band Staff.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Health Band Staff/Health Band Staff.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554M4G4HSA;
 				INFOPLIST_FILE = "Health Band Staff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,6 +402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HarshGuraya.Health-Band-Staff";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,7 +413,10 @@
 			baseConfigurationReference = 4A1592C9A1012335BFE8AB68 /* Pods-Health Band Staff.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Health Band Staff/Health Band Staff.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554M4G4HSA;
 				INFOPLIST_FILE = "Health Band Staff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HarshGuraya.Health-Band-Staff";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

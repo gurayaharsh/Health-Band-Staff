@@ -5,7 +5,12 @@ target 'Health Band Staff' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
+
+  # Pods for Health Band Staff
+
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Messaging'
+	pod 'Firebase/Analytics'
 
 end
